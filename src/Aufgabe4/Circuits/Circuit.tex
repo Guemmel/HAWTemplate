@@ -1,0 +1,9 @@
+\begin{circuitikz}[european]\draw
+    (0,0) to[battery1] (0,6) -- (1,6)
+    (1,6) to[voltmeter = $U_q$, *-*] (1,0) -- (0,0)
+    (1,6) -- (3,6) to[R = $R_1$, -*] (3,3)
+    (3,3) to[R = $R_2$, -*] (3,0) -- (1,0)
+    (3,3) -- (5,3) to[ammeter = $I_v$, *-] (5,2)
+    (5,2) to[vR = $R_v$, -*] (5,0) -- (3,0)
+    (5,3) -- (7,3) to[voltmeter = $U_v$] (7,0) -- (5,0)
+;\end{circuitikz}

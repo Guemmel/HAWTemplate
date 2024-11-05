@@ -1,0 +1,14 @@
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \bfseries Anzahl & \bfseries Bezeichnung & \bfseries Nummer & \bfseries Hinweis \\
+    \hline
+    \multicolumn{4}{|c|}{\bfseries Aufgabe 1}
+    \csvreader[head to column names,separator=comma]{src/Aufgabe1/Data/Materialliste.csv}{}
+    {\\\hline \csvcoli\ & \csvcolii & \csvcoliii & \csvcoliv}\\
+    \hline
+    \multicolumn{4}{|c|}{\bfseries Aufgabe 2}
+    \csvreader[head to column names,separator=comma]{src/Aufgabe2/Data/Materialliste.csv}{}
+    {\\\hline \csvcoli\ & \csvcolii & \csvcoliii & \csvcoliv}\\
+    \hline
+\end{tabular}
+

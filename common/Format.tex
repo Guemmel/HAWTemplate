@@ -1,0 +1,89 @@
+\setlength{\topskip}{\ht\strutbox} % behebt Warnung von geometry
+% \geometry{a4paper,left=20mm,right=20mm,top=25mm,bottom=35mm}
+\geometry{a4paper,left=25mm,right=25mm,top=25mm,bottom=35mm}
+
+\usepackage[
+	automark, % Kapitelangaben in Kopfzeile automatisch erstellen
+	headsepline, % Trennlinie unter Kopfzeile
+	ilines % Trennlinie linksbündig ausrichten
+]{scrlayer-scrpage}
+
+\usepackage{eurosym}
+\usepackage{textcomp}
+
+
+%\usepackage{helvet}
+
+\usepackage{lmodern}
+\usepackage{relsize}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+
+\onehalfspacing
+
+% Kopf- und Fußzeilen
+
+% ifoot links
+% cfoot mitte
+% ofoot rechts
+
+\pagestyle{scrheadings}
+% \clearscrheadfoot
+\chead
+	{\large{\textsc{\titel}}\\ 
+	% \tiny{\untertitel} \\
+	[2ex] 
+	\small{\headmark}}
+\chead{}
+\ohead{}
+\setlength{\headheight}{15mm} % Höhe der Kopfzeile
+
+
+\ifoot{\author}
+\cfoot{\today}
+\ofoot{Seite \pagemark}
+
+% -------------------
+
+
+\newcommand{\headingSpace}{1.5cm}
+
+\renewcommand*{\othersectionlevelsformat}[3]{
+  \makebox[\headingSpace][l]{#3\autodot}
+}
+
+% Für die Einrückung wird das Paket tocloft benötigt
+%\cftsetindents{chapter}{0.0cm}{\headingSpace}
+\cftsetindents{section}{0.0cm}{\headingSpace}
+\cftsetindents{subsection}{0.0cm}{\headingSpace}
+\cftsetindents{subsubsection}{0.0cm}{\headingSpace}
+\cftsetindents{figure}{0.0cm}{\headingSpace}
+\cftsetindents{table}{0.0cm}{\headingSpace}
+
+
+
+% Farben
+\definecolor{SKM}{HTML}{1e8a70}
+% \definecolor{SKM}{rgb}{0.9,0.9,0.9}
+% \definecolor{SKM}{HTML}{18896d}
+\definecolor{odd}{HTML}{b3b3b3}
+
+
+% Syntxhiglighting
+
+\counterwithout{footnote}{section} % Fußnoten fortlaufend durchnummerieren
+\setcounter{tocdepth}{3} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen
+\setcounter{secnumdepth}{3} % Kapitel bis zum Level der subsubsection werden nummeriert
+
+% Aufzählungen anpassen
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+
+% Tabellenfärbung:
+\definecolor{heading}{rgb}{0.64,0.78,0.86}
+\definecolor{odd}{rgb}{0.9,0.9,0.9}

@@ -1,0 +1,71 @@
+% !TeX encoding = uft8
+
+\documentclass[11pt, 
+                toc=listof, 
+                toc=bibliography, 
+                footnotes=multiple, 
+                parskip=half, 
+                numbers=noendperiod,
+                ngerman
+            ]{scrartcl}
+\input{common/Packages.tex}
+\input{MetaData.tex}
+\input{common/Format.tex}
+\input{common/Befehle.tex}
+\begin{document}
+
+% Deckblatt
+
+\include{src/Deckblatt}
+
+
+% Inhalsverzeichnisse
+
+\pagenumbering{roman}
+
+
+\begingroup
+\hypersetup{linkcolor=black}
+\tableofcontents
+\clearpage
+
+\listoffigures
+
+
+\listoftables
+\clearpage
+
+% \newcommand{\abkvz}{Abkürzungsverzeichnis}
+% \renewcommand{\nomname}{\abkvz}
+% \section*{\abkvz}
+% \markboth{\abkvz}{\abkvz}
+% \addcontentsline{toc}{section}{\abkvz}
+% \input{common/Abkuerzungen.tex}
+% \clearpage
+
+
+\endgroup
+% Inhalt
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Materialliste}
+In der folgenden \reftable{MateriallisteGesamt} sind für alle Laborversuche notwendigen Geräte hinterlegt. 
+Die für die jeweiligen Aufgaben notwendigen Geräte sind zu Anfang einer jeden Aufgabe erwähnt.
+\tabelle{Materialliste Gesamt}{MateriallisteGesamt}{MateriallisteGesamt.tex}
+
+\include{src/Fragen zur Vorbereitung}
+\include{src/Aufgabe1/Aufgabe1}
+\include{src/Aufgabe2/Aufgabe2}
+\include{src/Aufgabe3/Aufgabe3}
+\include{src/Aufgabe4/Aufgabe4}
+
+
+\clearpage
+\nocite{*}
+
+
+% \include{src/Anhang/_Anhang}
+
+\end{document}

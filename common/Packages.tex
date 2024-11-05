@@ -1,0 +1,99 @@
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+\usepackage[
+    bookmarks,
+    bookmarksnumbered,
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    colorlinks=true,
+% diese Farbdefinitionen zeichnen Links im PDF farblich aus
+    linkcolor=SKM,
+    anchorcolor=SKM,% Ankertext
+    citecolor=SKM, % Verweise auf Literaturverzeichniseinträge im Text
+    filecolor=SKM, % Verknüpfungen, die lokale Dateien öffnen
+    menucolor=SKM, % Acrobat-Menüpunkte
+    urlcolor=SKM,
+% diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
+    %linkcolor=black, % einfache interne Verknüpfungen
+    %anchorcolor=black, % Ankertext
+    %citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
+    %filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
+    %menucolor=black, % Acrobat-Menüpunkte
+    %urlcolor=black,
+%
+    backref, % Quellen werden zurück auf ihre Zitate verlinkt
+    % pdftex,
+    % plainpages=false, % zur korrekten Erstellung der Bookmarks
+    % pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
+    % hypertexnames=false, % zur korrekten Erstellung der Bookmarks
+    % linkcolor=black,
+    linktoc=all,
+    pdfpagelabels=true
+]{hyperref}
+\usepackage{caption}
+% Befehle, die Umlaute ausgeben, führen zu Fehlern, wenn sie hyperref als Optionen übergeben werden
+% \hypersetup{
+%     % pdftitle={\titel -- \untertitel},
+%     % pdfauthor={\autorName},
+%     % pdfcreator={\autorName},
+%     % pdfsubject={\titel -- \untertitel},
+%     % pdfkeywords={\titel -- \untertitel},
+% }
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\usepackage{ulem}
+
+\usepackage{relsize} % Releative Schrifgröße
+\usepackage{lipsum}
+
+\usepackage[titles]{tocloft} % Inhaltsverzeichnis
+
+% Deckblatt
+\usepackage{mwe}
+\usepackage[absolute]{textpos}
+
+\usepackage{setspace}
+\usepackage{geometry}
+
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{adjustbox}
+
+\usepackage{float}
+\restylefloat{table}
+
+\usepackage{todonotes}
+
+
+% Symbolverzeichnis
+\usepackage{acronym}
+\usepackage[intoc]{nomencl}
+\let\abbrev\nomenclature
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+
+\usepackage{varioref} % Elegantere Verweise. „auf der nächsten Seite“
+\usepackage{url} % URL verlinken, lange URLs umbrechen etc.
+
+\usepackage{chngcntr} % fortlaufendes Durchnummerieren der Fußnoten
+% \usepackage[perpage]{footmisc} % Alternative: Nummerierung der Fußnoten auf jeder Seite neu
+
+\usepackage{ifthen} % bei der Definition eigener Befehle benötigt
+\usepackage[square]{natbib} % wichtig für korrekte Zitierweise
+
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{csvsimple}
+\usepackage{siunitx}
+
+\sisetup{locale=DE,per-mode=symbol,range-phrase=--,range-units=single,product-units=single}

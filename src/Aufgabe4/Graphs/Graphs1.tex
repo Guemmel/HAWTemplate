@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        title={$U_v=f(Iv)$},
+        xlabel={$I_v$ / $mA$},
+        ylabel={$U_v$ / $V$ },
+        xmin=0, xmax=70,
+        ymin=0, ymax=16,
+        xtick={0,10,20,30,40,50,60,70},
+        ytick={0,2,4,6,8,10,12,14,16},
+        legend pos=north west,
+        ymajorgrids=true,
+        grid style=dashed,
+    ]
+    
+    \addplot table[
+        color=blue,
+        mark=circle, 
+        col sep=semicolon,
+        x index=0,
+        y index=2
+        ]{src/Aufgabe4/Data/Data4_b.csv};
+
+    \legend{Alpha = 0.3, Alpha = 0.6}
+        
+    \end{axis}
+\end{tikzpicture}

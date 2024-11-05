@@ -1,0 +1,70 @@
+
+
+
+\newcommand{\Anhang}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1} auf Seite \pageref{A:#1}}
+\newcommand{\AnhangKurz}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1}}
+\newcommand{\mysctnref}[1]{Abschnitt \ref{sctn:#1} (\nameref{sctn:#1})}
+\newcommand{\mypageref}[1]{\ref{sctn:#1}: \nameref{sctn:#1} auf Seite \pageref{sctn:#1}}
+\newcommand{\reftable}[1]{Tabelle \ref{tab:#1}: \nameref{tab:#1}}
+\newcommand{\reftablefull}[1]{Tabelle \ref{tab:#1} auf Seite \pageref{tab:#1}}
+\newcommand{\mycircuitref}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1}}
+\newcommand{\myfigureref}[1]{Abbildung \ref{#1}: \nameref{#1}}
+\newcommand{\myfigurereffull}[1]{Abbildung \ref{#1} auf Seite \pageref{#1}}
+\newcommand{\mygraphref}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1}}
+\newcommand{\mygraphreffull}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1} auf Seite \pageref{graph:#1}}
+
+% fügt Tabellen aus einer TEX-Datei ein
+\newcommand{\tabelle}[3] % Parameter: caption, label, file
+    {\begin{table}[H]
+    \centering
+    \singlespacing
+    \input{src/#3}
+    \caption{#1}
+    \label{tab:#2}
+    \end{table}}
+    
+\newcommand{\tabelleAnhang}[2] % Parameter: file
+    {\begin{table}[H]
+    \centering
+    \singlespacing
+    \input{src/Tabellen/#2}
+    \caption{#1}
+    \end{table}}
+
+
+\newcommand{\graph}[3]{
+        \begin{figure}[H]
+            \centering
+            \input{src/#3}
+            \caption{#1}
+            \label{graph:#2}
+        \end{figure}
+}
+
+\newcommand{\circuit}[3]{
+        \begin{figure}[H]
+            \centering
+            \input{src/#3}
+            \caption{#1}
+            \label{circuit:#2}
+        \end{figure}
+}
+
+
+
+% TODO
+\newcommand{\ausdruck}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green]{#1}}
+\newcommand{\ergaenzungen}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
+\newcommand{\hinweis}[1]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red]{#1}}
+\newcommand{\mytodo}[1]{\todo[inline]{#1}}
+
+% Semantics
+\newcommand{\Index}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}#2}{\index{#1}#2}}
+\newcommand{\Fachbegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textit{\Index{#2}}}{\textit{\Index[#1]{#2}}}}
+\newcommand{\NeuerBegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textbf{\Index{#2}}}{\textbf{\Index[#1]{#2}}}}
+
+\newcommand{\Formelzeichen}[1]{\texttt{#1}}
+\newcommand*{\Wert}[3]{\Formelzeichen{#1}~=~{#2}~{#3}}
+\newcommand{\Frage}[1]{\subsubsection*{#1}}
+
+\newcommand{\WE}[2]{\SI{#1}{#2}}
