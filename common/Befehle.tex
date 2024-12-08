@@ -5,6 +5,8 @@
 \newcommand{\reftable}[1]{Tabelle \ref{tab:#1}: \nameref{tab:#1}}
 \newcommand{\reftablefull}[1]{Tabelle \ref{tab:#1} auf Seite \pageref{tab:#1}}
 \newcommand{\mycircuitref}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1}}
+\newcommand{\mycircuitreffull}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1} auf Seite \pageref{circuit:#1}}
+\newcommand{\myscreenref}[1]{Abbildung \ref{screen:#1}: \nameref{screen:#1}}
 \newcommand{\myfigureref}[1]{Abbildung \ref{#1}: \nameref{#1}}
 \newcommand{\myfigurereffull}[1]{Abbildung \ref{#1} auf Seite \pageref{#1}}
 \newcommand{\mygraphref}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1}}
@@ -38,10 +40,24 @@
         \end{figure}
 }
 
+\newcommand{\screenshot}[4]{
+        \begin{figure}[H]
+            \centering
+            \textbf{#4}\par\medskip
+            \adjustbox{max width=\linewidth}{
+                \includegraphics[scale=0.3]{src/#3}
+            }
+            \caption{#1}
+            \label{graph:#2}
+        \end{figure}
+}
+
 \newcommand{\circuit}[3]{
         \begin{figure}[H]
             \centering
-            \input{src/#3}
+            \adjustbox{max width=\linewidth}{
+                \input{src/#3}
+            }
             \caption{#1}
             \label{circuit:#2}
         \end{figure}
@@ -62,6 +78,7 @@
 
 \newcommand{\Formelzeichen}[1]{\texttt{#1}}
 \newcommand*{\Wert}[3]{\Formelzeichen{#1}~=~{#2}~{#3}}
-\newcommand{\Frage}[1]{\subsubsection*{#1}}
+\newcommand{\Frage}[1]{\subsection*{#1}}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
 \newcommand{\WE}[2]{\SI{#1}{#2}}
