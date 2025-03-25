@@ -1,6 +1,7 @@
 # HAW LaTeX Template
 
-A LaTeX template designed for academic documents at Hamburg University of Applied Sciences (HAW Hamburg).
+A LaTeX template designed for academic documents at Hamburg University of Applied Sciences (HAW Hamburg). Not an official template.
+While formatting requirements may vary, this template serves as a robust foundation for academic documents.
 
 ## Features
 
