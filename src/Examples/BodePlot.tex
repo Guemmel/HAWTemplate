@@ -1,0 +1,75 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group name=my plots,
+            group size=1 by 2,
+            xlabels at=edge bottom,
+            xticklabels at=edge bottom,
+            vertical sep=15pt,
+        },
+        width=350pt,
+        height=250pt,
+        grid=both,
+        legend pos=north east,
+        xmin=0, xmax=10000,
+        xmode=log,
+    ]
+    \nextgroupplot[
+        title={Bode Diagramm},
+        xticklabels=\empty,
+        ylabel={$F(\omega)$ / $dB$},
+        ymin=-40, ymax=10,
+    ]
+        % Plot measurement data (magnitude)
+        \addplot+[smooth] table[
+            color=red,
+            mark=*,
+            col sep=semicolon,
+            x index=0, % Frequency data
+            y index=3  % Magnitude data
+        ]{src/Aufgabe4/Data/Data_TP.csv};
+        
+        \addplot[
+            color=red,
+            dashed,
+            thick,
+        ] coordinates {
+            (500, 10)
+            (500, -40)
+        };
+
+        \addplot[
+            color=orange,
+            thick,
+            dashed,
+        ] coordinates {
+            (1000, -10.17)
+            (2000, -10.17)
+            (2000, -20.12)
+        };
+        \legend{Amplitudengang,Grenzfrequenz,Dämpfung/Oktave}
+    \nextgroupplot[
+        xlabel={$f$ / $Hz$},
+        ylabel={$\varphi$ / $\degree$},
+        ymin=-180, ymax=10,
+    ]
+        % Plot measurement data (phase)
+        \addplot+[smooth] table[
+            color=red,
+            mark=*,
+            col sep=semicolon,
+            x index=0, % Frequency data
+            y index=5  % Phase data
+        ]{src/Aufgabe4/Data/Data_TP.csv};
+
+        \addplot[
+            color=red,
+            dashed,
+            thick,
+        ] coordinates {
+            (500, 10)
+            (500, -180)
+        };
+        \legend{Phasengang,Grenzfrequenz}
+    \end{groupplot}
+\end{tikzpicture}

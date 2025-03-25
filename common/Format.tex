@@ -33,17 +33,17 @@
 
 \pagestyle{scrheadings}
 % \clearscrheadfoot
+\makeatletter
 \chead
-	{\large{\textsc{\titel}}\\ 
+	{\large{\textsc{\@title}}\\ 
 	% \tiny{\untertitel} \\
-	[2ex] 
-	\small{\headmark}}
-\chead{}
+	\small{\rightmark}}
+\makeatother
 \ohead{}
 \setlength{\headheight}{15mm} % Höhe der Kopfzeile
 
 
-\ifoot{\author}
+\ifoot{Gomoll, Hinterthan}
 \cfoot{\today}
 \ofoot{Seite \pagemark}
 
@@ -67,9 +67,9 @@
 
 
 % Farben
-\definecolor{HAW}{HTML}{4293cd}
-% \definecolor{HAW}{rgb}{0.9,0.9,0.9}
-% \definecolor{HAW}{HTML}{18896d}
+\definecolor{SKM}{HTML}{163b9a}
+% \definecolor{SKM}{rgb}{0.9,0.9,0.9}
+% \definecolor{SKM}{HTML}{18896d}
 \definecolor{odd}{HTML}{b3b3b3}
 
 

@@ -7,12 +7,12 @@
     bookmarksopenlevel=1,
     colorlinks=true,
 % diese Farbdefinitionen zeichnen Links im PDF farblich aus
-    linkcolor=HAW,
-    anchorcolor=HAW,% Ankertext
-    citecolor=HAW, % Verweise auf Literaturverzeichniseinträge im Text
-    filecolor=HAW, % Verknüpfungen, die lokale Dateien öffnen
-    menucolor=HAW, % Acrobat-Menüpunkte
-    urlcolor=HAW,
+    linkcolor=SKM,
+    anchorcolor=SKM,% Ankertext
+    citecolor=SKM, % Verweise auf Literaturverzeichniseinträge im Text
+    filecolor=SKM, % Verknüpfungen, die lokale Dateien öffnen
+    menucolor=SKM, % Acrobat-Menüpunkte
+    urlcolor=SKM,
 % diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
     %linkcolor=black, % einfache interne Verknüpfungen
     %anchorcolor=black, % Ankertext
@@ -92,10 +92,12 @@
 
 \usepackage{circuitikz}
 \usepackage{pgfplots}
-\pgfplotsset{width=10cm,compat=1.9}
+% \pgfplotsset{width=10cm,compat=1.9}
+\usepackage{bodeplot} % Provides formulas for plotting filter graphs
 \usepackage{csvsimple}
 \usepackage{siunitx}
 \usepackage{gensymb}
 \usepackage{accents}
+\usepackage{changelog}
 
 \sisetup{locale=DE,per-mode=symbol,range-phrase=--,range-units=single,product-units=single}
