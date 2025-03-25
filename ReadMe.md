@@ -20,7 +20,7 @@ The Wiki contains:
 ## Quick Start
 
 1. Clone this repository
-2. Configure your environment according to the [setup guide](https://github.com/Guemmel/HAWTemplate/wiki/Setup-Guide)
+2. Configure your environment according to the [setup guide](https://github.com/Guemmel/HAWTemplate/wiki/Setup)
 3. Start building your project!
 
 ## Support
