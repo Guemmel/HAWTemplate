@@ -1,20 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SEITENLAYOUT
+% PAGE LAYOUT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setlength{\topskip}{\ht\strutbox} % behebt Warnung von geometry
+\setlength{\topskip}{\ht\strutbox} % fixes warning from geometry
 \geometry{a4paper,left=25mm,right=25mm,top=25mm,bottom=35mm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DRUCKMODUS
+% PRINT MODE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Schalter für Druckmodus: \printmodetrue für S/W-Druck, \printmodefalse für farbige Links
+% Switch for print mode: \printmodetrue for B/W printing, \printmodefalse for colored links
 \newif\ifprintmode
-\printmodefalse % Standardmäßig farbige Links (auf 'true' setzen für S/W-Druck)
+\printmodefalse % Default: colored links (set to 'true' for B/W printing)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SCHRIFTARTEN UND TEXTSTILE
+% FONTS AND TEXT STYLES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{eurosym}
@@ -22,20 +22,20 @@
 \usepackage{lmodern}
 \usepackage{relsize}
 
-% Absatz- und Zeilenumbrüche verbessern
+% Improve paragraph and line breaks
 \clubpenalty = 10000
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 \onehalfspacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% KOPF- UND FUSSZEILENKONFIGURATION
+% HEADER AND FOOTER CONFIGURATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[
-	automark, % Kapitelangaben in Kopfzeile automatisch erstellen
-	headsepline, % Trennlinie unter Kopfzeile
-	ilines % Trennlinie linksbündig ausrichten
+	automark, % Automatically create chapter entries in header
+	headsepline, % Add separation line under header
+	ilines % Left-align separation line
 ]{scrlayer-scrpage}
 
 \pagestyle{scrheadings}
@@ -47,13 +47,13 @@
 \ohead{}
 \setlength{\headheight}{15mm} % Höhe der Kopfzeile
 
-% Fußzeile: links, mitte, rechts
+% Footer: left, center, right
 \ifoot{Gomoll, Hinterthan}
 \cfoot{\today}
-\ofoot{Seite \pagemark}
+\ofoot{Page \pagemark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ÜBERSCHRIFTENFORMATIERUNG
+% HEADING FORMATTING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\headingSpace}{1.5cm}
@@ -61,7 +61,7 @@
   \makebox[\headingSpace][l]{#3\autodot}
 }
 
-% Für die Einrückung wird das Paket tocloft benötigt
+% Indentation requires the tocloft package
 \cftsetindents{section}{0.0cm}{\headingSpace}
 \cftsetindents{subsection}{0.0cm}{\headingSpace}
 \cftsetindents{subsubsection}{0.0cm}{\headingSpace}
@@ -69,33 +69,33 @@
 \cftsetindents{table}{0.0cm}{\headingSpace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FARBEN
+% COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Farbdefinitionen
+% Color definitions
 \definecolor{HAW}{HTML}{163b9a}
 \definecolor{odd}{HTML}{b3b3b3}
 \definecolor{heading}{rgb}{0.64,0.78,0.86}
 
-% Link-Farben je nach Druckmodus
+% Link colors based on print mode
 \ifprintmode
-    % Schwarze Links für Druck
+    % Black links for printing
     \colorlet{LinkColor}{black}
 \else
-    % Farbige Links für Bildschirmanzeige
+    % Colored links for screen display
     \colorlet{LinkColor}{HAW}
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% NUMMERIERUNG UND ZÄHLER
+% NUMBERING AND COUNTERS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\counterwithout{footnote}{section} % Fußnoten fortlaufend durchnummerieren
-\setcounter{tocdepth}{3} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen
-\setcounter{secnumdepth}{3} % Kapitel bis zum Level der subsubsection werden nummeriert
+\counterwithout{footnote}{section} % Continuously number footnotes
+\setcounter{tocdepth}{3} % Include chapters up to subsubsection level in TOC
+\setcounter{secnumdepth}{3} % Number chapters up to subsubsection level
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AUFZÄHLUNGSFORMATIERUNG
+% ENUMERATION FORMATTING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}

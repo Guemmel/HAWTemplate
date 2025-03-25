@@ -1,20 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REFERENZBEFEHLE
+% REFERENCE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Anhang-Referenzen
+% Appendix references
 \newcommand{\Anhang}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1} auf Seite \pageref{A:#1}}
 \newcommand{\AnhangKurz}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1}}
 
-% Abschnitts-Referenzen
+% Section references
 \newcommand{\mysctnref}[1]{Abschnitt \ref{sctn:#1} (\nameref{sctn:#1})}
 \newcommand{\mypageref}[1]{\ref{sctn:#1}: \nameref{sctn:#1} auf Seite \pageref{sctn:#1}}
 
-% Tabellen-Referenzen
+% Table references
 \newcommand{\reftable}[1]{Tabelle \ref{tab:#1}: \nameref{tab:#1}}
 \newcommand{\reftablefull}[1]{Tabelle \ref{tab:#1} auf Seite \pageref{tab:#1}}
 
-% Abbildungs-Referenzen
+% Figure references
 \newcommand{\mycircuitref}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1}}
 \newcommand{\mycircuitreffull}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1} auf Seite \pageref{circuit:#1}}
 \newcommand{\myscreenref}[1]{Abbildung \ref{screen:#1}: \nameref{screen:#1}}
@@ -24,10 +24,10 @@
 \newcommand{\mygraphreffull}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1} auf Seite \pageref{graph:#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TABELLENBEFEHLE
+% TABLE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Tabelle aus TEX-Datei einfügen: caption, label, file
+% Insert table from TEX file: caption, label, file
 \newcommand{\tabelle}[3]{%
     \begin{table}[H]
     \centering
@@ -37,7 +37,7 @@
     \label{tab:#2}
     \end{table}}
     
-% Tabelle aus TEX-Datei im Anhang einfügen: caption, file
+% Insert table from TEX file in appendix: caption, file
 \newcommand{\tabelleAnhang}[2]{%
     \begin{table}[H]
     \centering
@@ -47,10 +47,10 @@
     \end{table}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ABBILDUNGSBEFEHLE
+% FIGURE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Graph einfügen: caption, label, file
+% Insert graph: caption, label, file
 \newcommand{\graph}[3]{%
         \begin{figure}[H]
             \centering
@@ -60,7 +60,7 @@
         \end{figure}
 }
 
-% Screenshot einfügen: caption, label, file, title
+% Insert screenshot: caption, label, file, title
 \newcommand{\screenshot}[4]{%
         \begin{figure}[H]
             \centering
@@ -73,7 +73,7 @@
         \end{figure}
 }
 
-% Schaltkreis einfügen: caption, label, file
+% Insert circuit: caption, label, file
 \newcommand{\circuit}[3]{%
         \begin{figure}[H]
             \centering
@@ -86,7 +86,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TODO-BEFEHLE
+% TODO COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\ausdruck}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green]{#1}}
@@ -95,7 +95,7 @@
 \newcommand{\mytodo}[1]{\todo[inline]{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SEMANTISCHE BEFEHLE
+% SEMANTIC COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\Index}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}#2}{\index{#1}#2}}
@@ -107,5 +107,5 @@
 \newcommand{\Frage}[1]{\subsection*{#1}}
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
-% SI-Einheiten
+% SI units
 \newcommand{\WE}[2]{\SI{#1}{#2}}
