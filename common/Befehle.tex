@@ -1,9 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENZBEFEHLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Anhang-Referenzen
 \newcommand{\Anhang}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1} auf Seite \pageref{A:#1}}
 \newcommand{\AnhangKurz}[1]{\appendixname{}~\ref{A:#1}: \nameref{A:#1}}
+
+% Abschnitts-Referenzen
 \newcommand{\mysctnref}[1]{Abschnitt \ref{sctn:#1} (\nameref{sctn:#1})}
 \newcommand{\mypageref}[1]{\ref{sctn:#1}: \nameref{sctn:#1} auf Seite \pageref{sctn:#1}}
+
+% Tabellen-Referenzen
 \newcommand{\reftable}[1]{Tabelle \ref{tab:#1}: \nameref{tab:#1}}
 \newcommand{\reftablefull}[1]{Tabelle \ref{tab:#1} auf Seite \pageref{tab:#1}}
+
+% Abbildungs-Referenzen
 \newcommand{\mycircuitref}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1}}
 \newcommand{\mycircuitreffull}[1]{Abbildung \ref{circuit:#1}: \nameref{circuit:#1} auf Seite \pageref{circuit:#1}}
 \newcommand{\myscreenref}[1]{Abbildung \ref{screen:#1}: \nameref{screen:#1}}
@@ -12,9 +23,13 @@
 \newcommand{\mygraphref}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1}}
 \newcommand{\mygraphreffull}[1]{Abbildung \ref{graph:#1}: \nameref{graph:#1} auf Seite \pageref{graph:#1}}
 
-% fügt Tabellen aus einer TEX-Datei ein
-\newcommand{\tabelle}[3] % Parameter: caption, label, file
-    {\begin{table}[H]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABELLENBEFEHLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tabelle aus TEX-Datei einfügen: caption, label, file
+\newcommand{\tabelle}[3]{%
+    \begin{table}[H]
     \centering
     \singlespacing
     \input{src/#3}
@@ -22,16 +37,21 @@
     \label{tab:#2}
     \end{table}}
     
-\newcommand{\tabelleAnhang}[2] % Parameter: file
-    {\begin{table}[H]
+% Tabelle aus TEX-Datei im Anhang einfügen: caption, file
+\newcommand{\tabelleAnhang}[2]{%
+    \begin{table}[H]
     \centering
     \singlespacing
     \input{src/Tabellen/#2}
     \caption{#1}
     \end{table}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABBILDUNGSBEFEHLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\graph}[3]{
+% Graph einfügen: caption, label, file
+\newcommand{\graph}[3]{%
         \begin{figure}[H]
             \centering
             \input{src/#3}
@@ -40,7 +60,8 @@
         \end{figure}
 }
 
-\newcommand{\screenshot}[4]{
+% Screenshot einfügen: caption, label, file, title
+\newcommand{\screenshot}[4]{%
         \begin{figure}[H]
             \centering
             \textbf{#4}\par\medskip
@@ -52,7 +73,8 @@
         \end{figure}
 }
 
-\newcommand{\circuit}[3]{
+% Schaltkreis einfügen: caption, label, file
+\newcommand{\circuit}[3]{%
         \begin{figure}[H]
             \centering
             \adjustbox{max width=\linewidth}{
@@ -63,15 +85,19 @@
         \end{figure}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO-BEFEHLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% TODO
 \newcommand{\ausdruck}[1]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green]{#1}}
 \newcommand{\ergaenzungen}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
 \newcommand{\hinweis}[1]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red]{#1}}
 \newcommand{\mytodo}[1]{\todo[inline]{#1}}
 
-% Semantics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SEMANTISCHE BEFEHLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\Index}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}#2}{\index{#1}#2}}
 \newcommand{\Fachbegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textit{\Index{#2}}}{\textit{\Index[#1]{#2}}}}
 \newcommand{\NeuerBegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textbf{\Index{#2}}}{\textbf{\Index[#1]{#2}}}}
@@ -81,4 +107,5 @@
 \newcommand{\Frage}[1]{\subsection*{#1}}
 \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
 
+% SI-Einheiten
 \newcommand{\WE}[2]{\SI{#1}{#2}}

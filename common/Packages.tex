@@ -1,3 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF-FUNKTIONALITÄT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{pdfpages}
 \usepackage{pdflscape}
 \usepackage[
@@ -6,73 +10,79 @@
     bookmarksopen=true,
     bookmarksopenlevel=1,
     colorlinks=true,
-% diese Farbdefinitionen zeichnen Links im PDF farblich aus
-    linkcolor=SKM,
-    anchorcolor=SKM,% Ankertext
-    citecolor=SKM, % Verweise auf Literaturverzeichniseinträge im Text
-    filecolor=SKM, % Verknüpfungen, die lokale Dateien öffnen
-    menucolor=SKM, % Acrobat-Menüpunkte
-    urlcolor=SKM,
-% diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
-    %linkcolor=black, % einfache interne Verknüpfungen
-    %anchorcolor=black, % Ankertext
-    %citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
-    %filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
-    %menucolor=black, % Acrobat-Menüpunkte
-    %urlcolor=black,
-%
+    % Links werden gemäß Druckmodus eingefärbt (LinkColor aus Format.tex)
+    linkcolor=LinkColor,
+    anchorcolor=LinkColor,
+    citecolor=LinkColor,
+    filecolor=LinkColor,
+    menucolor=LinkColor,
+    urlcolor=LinkColor,
     backref, % Quellen werden zurück auf ihre Zitate verlinkt
-    % pdftex,
-    % plainpages=false, % zur korrekten Erstellung der Bookmarks
-    % pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
-    % hypertexnames=false, % zur korrekten Erstellung der Bookmarks
-    % linkcolor=black,
     linktoc=all,
     pdfpagelabels=true
 ]{hyperref}
-\usepackage{caption}
-% Befehle, die Umlaute ausgeben, führen zu Fehlern, wenn sie hyperref als Optionen übergeben werden
-% \hypersetup{
-%     % pdftitle={\titel -- \untertitel},
-%     % pdfauthor={\autorName},
-%     % pdfcreator={\autorName},
-%     % pdfsubject={\titel -- \untertitel},
-%     % pdfkeywords={\titel -- \untertitel},
-% }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GRUNDLEGENDE SPRACHEINSTELLUNGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TEXT- UND SCHRIFTFORMATIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{caption}
+\usepackage{ulem}
+\usepackage{relsize} % Relative Schriftgröße
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ifthen} % bei der Definition eigener Befehle benötigt
+\usepackage{url} % URL verlinken, lange URLs umbrechen etc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FARBEN UND TABELLEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{xcolor}
 \usepackage{colortbl}
+\usepackage{float}
+\restylefloat{table}
 
-\usepackage{ulem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LAYOUT UND GEOMETRIE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{relsize} % Releative Schrifgröße
-\usepackage{lipsum}
-
+\usepackage{geometry}
 \usepackage[titles]{tocloft} % Inhaltsverzeichnis
 
-% Deckblatt
-\usepackage{mwe}
-\usepackage[absolute]{textpos}
-
-\usepackage{setspace}
-\usepackage{geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABBILDUNGEN UND GRAFIKEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{adjustbox}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\usepackage{bodeplot} % Provides formulas for plotting filter graphs
 
-\usepackage{float}
-\restylefloat{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WISSENSCHAFTLICHE FUNKTIONALITÄT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{todonotes}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{accents}
+\usepackage{csvsimple}
+\usepackage[square]{natbib} % wichtig für korrekte Zitierweise
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VERZEICHNISSE UND REFERENZEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Symbolverzeichnis
 \usepackage{acronym}
 \usepackage[intoc]{nomencl}
 \let\abbrev\nomenclature
@@ -81,23 +91,20 @@
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \setlength{\nomitemsep}{-\parsep}
 
-\usepackage{varioref} % Elegantere Verweise. „auf der nächsten Seite“
-\usepackage{url} % URL verlinken, lange URLs umbrechen etc.
-
+\usepackage{varioref} % Elegantere Verweise. „auf der nächsten Seite"
 \usepackage{chngcntr} % fortlaufendes Durchnummerieren der Fußnoten
-% \usepackage[perpage]{footmisc} % Alternative: Nummerierung der Fußnoten auf jeder Seite neu
-
-\usepackage{ifthen} % bei der Definition eigener Befehle benötigt
-\usepackage[square]{natbib} % wichtig für korrekte Zitierweise
-
-\usepackage{circuitikz}
-\usepackage{pgfplots}
-% \pgfplotsset{width=10cm,compat=1.9}
-\usepackage{bodeplot} % Provides formulas for plotting filter graphs
-\usepackage{csvsimple}
-\usepackage{siunitx}
-\usepackage{gensymb}
-\usepackage{accents}
 \usepackage{changelog}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SONSTIGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{mwe}
+\usepackage[absolute]{textpos}
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EINSTELLUNGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sisetup{locale=DE,per-mode=symbol,range-phrase=--,range-units=single,product-units=single}

@@ -1,6 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SEITENLAYOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setlength{\topskip}{\ht\strutbox} % behebt Warnung von geometry
-% \geometry{a4paper,left=20mm,right=20mm,top=25mm,bottom=35mm}
 \geometry{a4paper,left=25mm,right=25mm,top=25mm,bottom=35mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DRUCKMODUS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Schalter für Druckmodus: \printmodetrue für S/W-Druck, \printmodefalse für farbige Links
+\newif\ifprintmode
+\printmodefalse % Standardmäßig farbige Links (auf 'true' setzen für S/W-Druck)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SCHRIFTARTEN UND TEXTSTILE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{eurosym}
+\usepackage{textcomp}
+\usepackage{lmodern}
+\usepackage{relsize}
+
+% Absatz- und Zeilenumbrüche verbessern
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+\onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KOPF- UND FUSSZEILENKONFIGURATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[
 	automark, % Kapitelangaben in Kopfzeile automatisch erstellen
@@ -8,82 +38,66 @@
 	ilines % Trennlinie linksbündig ausrichten
 ]{scrlayer-scrpage}
 
-\usepackage{eurosym}
-\usepackage{textcomp}
-
-
-%\usepackage{helvet}
-
-\usepackage{lmodern}
-\usepackage{relsize}
-%\renewcommand{\familydefault}{\sfdefault}
-
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
-
-
-\onehalfspacing
-
-% Kopf- und Fußzeilen
-
-% ifoot links
-% cfoot mitte
-% ofoot rechts
-
 \pagestyle{scrheadings}
-% \clearscrheadfoot
 \makeatletter
-\chead
-	{\large{\textsc{\@title}}\\ 
-	% \tiny{\untertitel} \\
+\chead{%
+	\large{\textsc{\@title}}\\ 
 	\small{\rightmark}}
 \makeatother
 \ohead{}
 \setlength{\headheight}{15mm} % Höhe der Kopfzeile
 
-
+% Fußzeile: links, mitte, rechts
 \ifoot{Gomoll, Hinterthan}
 \cfoot{\today}
 \ofoot{Seite \pagemark}
 
-% -------------------
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ÜBERSCHRIFTENFORMATIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\headingSpace}{1.5cm}
-
 \renewcommand*{\othersectionlevelsformat}[3]{
   \makebox[\headingSpace][l]{#3\autodot}
 }
 
 % Für die Einrückung wird das Paket tocloft benötigt
-%\cftsetindents{chapter}{0.0cm}{\headingSpace}
 \cftsetindents{section}{0.0cm}{\headingSpace}
 \cftsetindents{subsection}{0.0cm}{\headingSpace}
 \cftsetindents{subsubsection}{0.0cm}{\headingSpace}
 \cftsetindents{figure}{0.0cm}{\headingSpace}
 \cftsetindents{table}{0.0cm}{\headingSpace}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FARBEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-% Farben
-\definecolor{SKM}{HTML}{163b9a}
-% \definecolor{SKM}{rgb}{0.9,0.9,0.9}
-% \definecolor{SKM}{HTML}{18896d}
+% Farbdefinitionen
+\definecolor{HAW}{HTML}{163b9a}
 \definecolor{odd}{HTML}{b3b3b3}
+\definecolor{heading}{rgb}{0.64,0.78,0.86}
 
+% Link-Farben je nach Druckmodus
+\ifprintmode
+    % Schwarze Links für Druck
+    \colorlet{LinkColor}{black}
+\else
+    % Farbige Links für Bildschirmanzeige
+    \colorlet{LinkColor}{HAW}
+\fi
 
-% Syntxhiglighting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NUMMERIERUNG UND ZÄHLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \counterwithout{footnote}{section} % Fußnoten fortlaufend durchnummerieren
 \setcounter{tocdepth}{3} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen
 \setcounter{secnumdepth}{3} % Kapitel bis zum Level der subsubsection werden nummeriert
 
-% Aufzählungen anpassen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AUFZÄHLUNGSFORMATIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
-
-% Tabellenfärbung:
-\definecolor{heading}{rgb}{0.64,0.78,0.86}
-\definecolor{odd}{rgb}{0.9,0.9,0.9}
