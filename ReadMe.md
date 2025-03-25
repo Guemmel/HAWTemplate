@@ -1,28 +1,37 @@
-# HAW Template
+# HAW LaTeX Template
 
-This repository contains template code for HAW projects.
+A LaTeX template designed for academic documents at Hamburg University of Applied Sciences (HAW Hamburg).
 
-## Overview
+## Features
 
-This template provides a foundation for your projects at HAW (Hamburg University of Applied Sciences). It includes a set of standard configurations and utility functions to help you get started quickly.
-
-## Documentation
-
-For detailed information about the specific functions and features included in this template, please refer to our [GitHub Wiki](https://github.com/Guemmel/HAWTemplate/wiki).
-
-The Wiki contains:
-- Setup instructions
-- API documentation
-- Usage examples
-- Best practices
-- Troubleshooting tips
+- Professional document styling with HAW-inspired formatting
+- German language configuration with appropriate typography
+- Custom commands for tables, figures, and references
+- Print mode toggle for color/black-white output
+- Comprehensive bibliography support
+- Todo notes system for document development
 
 ## Quick Start
 
 1. Clone this repository
-2. Configure your environment according to the [setup guide](https://github.com/Guemmel/HAWTemplate/wiki/Setup)
-3. Start building your project!
+2. Install a LaTeX distribution ([MacTeX](https://tug.org/mactex/), [TeX Live](https://tug.org/texlive/))
+3. Edit `MetaData.tex` with your document details
+4. Create content in the `src/` directory
+5. Compile `Document.tex` to generate your PDF
+
+## Documentation
+
+For more detailed instructions, please refer to our [GitHub Wiki](https://github.com/Guemmel/HAWTemplate/wiki):
+
+- [Setup Guide](https://github.com/Guemmel/HAWTemplate/wiki/Setup)
+- [Usage Guide](https://github.com/Guemmel/HAWTemplate/wiki/Usage)
+- [Best Practices](https://github.com/Guemmel/HAWTemplate/wiki/BestPractice)
+- [FAQ](https://github.com/Guemmel/HAWTemplate/wiki/FAQ)
+
+## Recommended Tools
+
+We recommend [Visual Studio Code](https://code.visualstudio.com/) with the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 
 ## Support
 
-If you encounter any issues or have questions, please check the [FAQ](https://github.com/Guemmel/HAWTemplate/wiki/FAQ) in our Wiki or open an issue in this repository.
+If you encounter issues, please check our [FAQ](https://github.com/Guemmel/HAWTemplate/wiki/FAQ) or open an issue in this repository.
